@@ -11,6 +11,8 @@
 
 Разработчик игр с 6+ летним опытом в Unity-разработке, Game Design, DevOps-автоматизации и управлении QA. Широкий профиль: от разработки игровых систем и миграции Unity проектов до построения CI/CD-инфраструктуры и управления командой.
 
+**Реальные примеры автоматизации CI/CD** (GitHub Actions workflows, Fastlane deployment configs) в моем портфолио: https://github.com/MoldyDanya/devops-portfolio
+
 **Ключевые достижения:**
 - Руководил разработкой игрового прототипа головоломки с планарными графами: создал GDD и дизайн механик, разработал визуальный редактор и инструменты баланса, сверстал UI (UI Toolkit), проработал FTUE, координировал команду (Unity dev, UI artist, VFX dev)
 
@@ -26,7 +28,7 @@
 - Разработал инструмент автоматической генерации баланса оружия в Google Sheets с Google Apps Script: система брала вводные параметры и автоматически рассчитывала все характеристики
 
 *DevOps и CI/CD:*
-- Сократил время сборки Unity-проектов с 1+ часа до 30-40 минут, деплоя — с 2+ часов до 50-60 минут
+- Сократил время сборки Unity-проектов с 1+ часа до 30-40 минут, деплоя - с 2+ часов до 50-60 минут
 - Обеспечил uptime AWS-инфраструктуры 99%+, снизил количество failed builds на 80%
 - Спроектировал и администрировал AWS-инфраструктуру: 4 EC2-сервера (2 CPU для сборок, 1 GPU для UI-тестов, 1 dev), on-demand provisioning с автоматическим запуском/остановкой, AMI snapshots для быстрого восстановления
 - Полностью автоматизировал deployment через Fastlane: Android → Google Play (Internal/Beta/Production), iOS → TestFlight
@@ -74,7 +76,7 @@ C#, Python, Bash, Ruby, JavaScript, Google Script
 ## ОПЫТ РАБОТЫ
 
 ### Ajika Games | DevOps Engineer & Unity Developer (Unity Mobile Projects)
-**Ноябрь 2024 — Сентябрь 2025 (11 месяцев)**
+**Ноябрь 2024 - Сентябрь 2025 (11 месяцев)**
 Местоположение: Китай (удаленная работа) | Формат работы: аутстаффинг на проекты Battle Creek Games
 **Проекты:** [Offroad Outlaws](https://play.google.com/store/apps/details?id=com.battlecreek.offroadoutlaws), [No Limit Drag Racing 2](https://play.google.com/store/apps/details?id=com.battlecreek.nolimit2)
 
@@ -126,7 +128,7 @@ C#, Python, Bash, Ruby, JavaScript, Google Script
 ---
 
 ### Ajika Games | Unity Developer & Game Designer
-**Ноябрь 2022 — Ноябрь 2024 (2 года 1 месяц)**
+**Ноябрь 2022 - Ноябрь 2024 (2 года 1 месяц)**
 Местоположение: Китай (удаленная работа)
 **Проекты:** Прототипы внутренней разработки студии, [Offroad Outlaws](https://play.google.com/store/apps/details?id=com.battlecreek.offroadoutlaws), [No Limit Drag Racing 2](https://play.google.com/store/apps/details?id=com.battlecreek.nolimit2), [Offroad Outlaws Drag Racing](https://play.google.com/store/apps/details?id=com.battlecreek.nolimit2dirtdrags), [American Marksman](https://play.google.com/store/apps/details?id=com.battlecreek.americanmarksman)
 
@@ -202,7 +204,7 @@ C#, Python, Bash, Ruby, JavaScript, Google Script
 ---
 
 ### GD Company (ForgeGames Mobile) | Lead Game Designer & Unity Developer
-**Июнь 2021 — Октябрь 2022 (1 год 5 месяцев)**
+**Июнь 2021 - Октябрь 2022 (1 год 5 месяцев)**
 Проект: [Grand Wars](https://play.google.com/store/apps/details?id=com.gdcompany.grandwars.mafiacity)
 
 **Game Design и документация**
@@ -255,7 +257,7 @@ C#, Python, Bash, Ruby, JavaScript, Google Script
 ---
 
 ### GD Company (ForgeGames Mobile) | QA Engineer Lead
-**Февраль 2019 — Июнь 2021 (2 года 5 месяцев)**
+**Февраль 2019 - Июнь 2021 (2 года 5 месяцев)**
 Проекты: [Pacific Warships](https://play.google.com/store/apps/details?id=com.gdcompany.deepwaters&hl=en), [Steel Rage](https://play.google.com/store/apps/details?id=com.gdcompany.robocars.shooterwarfare),[War After](https://play.google.com/store/apps/details?id=com.gdcompany.modernshooter.warfareops), [Grand Wars](https://play.google.com/store/apps/details?id=com.gdcompany.grandwars.mafiacity)
 
 **Организация QA-процессов (QA Engineer Lead)**
@@ -293,12 +295,12 @@ C#, Python, Bash, Ruby, JavaScript, Google Script
 
 **Образование**  
 Российский государственный университет им. А.Н. Косыгина  
-Бакалавр прикладной математики и информатики (2013 — 2017)
+Бакалавр прикладной математики и информатики (2013 - 2017)
 
 **Языки**  
-- **Русский** — родной  
-- **Английский** — B1 (Intermediate): работа с технической документацией, коммуникация с международными командами
+- **Русский** - родной  
+- **Английский** - B1 (Intermediate): работа с технической документацией, коммуникация с международными командами
 
 **Сертификаты**  
-- [Learn C# Course — Sololearn, 2022](https://www.sololearn.com/Certificate/CT-ZUZBDWNF/png)
-- [C# Course — Codecademy, 2022](https://www.codecademy.com/profiles/daniilSlepov1798965862/certificates/65f0ff88f4fc58e0536b3b51648dff24)
+- [Learn C# Course - Sololearn, 2022](https://www.sololearn.com/Certificate/CT-ZUZBDWNF/png)
+- [C# Course - Codecademy, 2022](https://www.codecademy.com/profiles/daniilSlepov1798965862/certificates/65f0ff88f4fc58e0536b3b51648dff24)
