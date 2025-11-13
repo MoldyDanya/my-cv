@@ -21,7 +21,7 @@ DevOps-инженер с опытом в игровой разработке (Un
 
 **Реальные примеры автоматизации CI/CD** (GitHub Actions workflows, Fastlane deployment configs) - в моем портфолио: https://github.com/MoldyDanya/devops-portfolio
 
-**Подробное резюме со всем опытом работы** (Unity Development, Game Design, DevOps, QA, управление командой): [master-CV-ru.md](https://github.com/MoldyDanya/my-cv/blob/main/master-CV-ru.md)
+**Подробное резюме со всем опытом работы** (Unity Development, Game Design, DevOps, QA, управление командой): [master-cv-ru.md](https://github.com/MoldyDanya/my-cv/blob/main/master-cv-ru.md)
 
 ---
 
