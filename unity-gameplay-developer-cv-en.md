@@ -21,6 +21,7 @@ Led development of innovative puzzle game prototype (untangling planar graphs): 
 
 Understand Game Design specifics from the inside (4 years of Game Designer experience): designed mechanics, balanced content, created GDDs, worked with level design and FTUE. Additional experience in DevOps (AWS, CI/CD) and QA (performance testing, automation) - useful for workflow optimization and code quality.
 
+**Example of Match-3 core gameplay implementation** (Unity) - in my portfolio: https://github.com/MoldyDanya/unity-match-3
 **Comprehensive resume with full work experience** (Unity Development, Game Design, DevOps, QA, team management): [master-cv-en.md](https://github.com/MoldyDanya/my-cv/blob/main/master-cv-en.md)
 
 ---

@@ -21,6 +21,7 @@ Unity Developer с 6+ летним опытом разработки игров�
 
 Понимаю специфику Game Design изнутри (4 года опыт Game Designer): проектировал механики, балансировал контент, создавал GDD, работал с level design и FTUE. Дополнительный опыт в DevOps (AWS, CI/CD) и QA (performance testing, automation) - полезен для оптимизации workflow и качества кода.
 
+**Пример реализации Match-3 core gameplay** (Unity) - в моем портфолио: https://github.com/MoldyDanya/unity-match-3
 **Подробное резюме со всем опытом работы** (Unity Development, Game Design, DevOps, QA, управление командой): [master-cv-ru.md](https://github.com/MoldyDanya/my-cv/blob/main/master-cv-ru.md)
 
 ---

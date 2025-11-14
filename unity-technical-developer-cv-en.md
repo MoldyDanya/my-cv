@@ -22,6 +22,7 @@ Unity Technical Developer with 6+ years of experience in mobile and PC projects.
 **Projects:**  
 Worked on multiplayer mobile games ([Offroad Outlaws](https://play.google.com/store/apps/details?id=com.battlecreek.offroadoutlaws), [No Limits Drag Racing 2](https://play.google.com/store/apps/details?id=com.battlecreek.nolimit2), [Grand Wars](https://play.google.com/store/apps/details?id=com.gdcompany.grandwars.mafiacity), [Steel Rage](https://play.google.com/store/apps/details?id=com.gdcompany.robocars.shooterwarfare)) and internal studio prototypes.
 
+**Example of Match-3 core gameplay implementation** (Unity) - in my portfolio: https://github.com/MoldyDanya/unity-match-3
 **Comprehensive resume with full work experience** (Unity Development, Game Design, DevOps, QA, team management): [master-cv-en.md](https://github.com/MoldyDanya/my-cv/blob/main/master-cv-en.md)
 
 ---

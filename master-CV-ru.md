@@ -12,6 +12,7 @@
 Разработчик игр с 6+ летним опытом в Unity-разработке, Game Design, DevOps-автоматизации и управлении QA. Широкий профиль: от разработки игровых систем и миграции Unity проектов до построения CI/CD-инфраструктуры и управления командой.
 
 **Реальные примеры автоматизации CI/CD** (GitHub Actions workflows, Fastlane deployment configs) в моем портфолио: https://github.com/MoldyDanya/devops-portfolio
+**Пример реализации Match-3 core gameplay** (Unity) - в моем портфолио: https://github.com/MoldyDanya/unity-match-3
 
 **Ключевые достижения:**
 - Руководил разработкой игрового прототипа головоломки с планарными графами: создал GDD и дизайн механик, разработал визуальный редактор и инструменты баланса, сверстал UI (UI Toolkit), проработал FTUE, координировал команду (Unity dev, UI artist, VFX dev)

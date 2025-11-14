@@ -12,6 +12,7 @@
 Game developer with 6+ years of experience in Unity development, Game Design, DevOps automation, and QA management. Broad skill set: from game systems development and Unity project migration to building CI/CD infrastructure and team management.
 
 **Real-world CI/CD automation examples** (GitHub Actions workflows, Fastlane deployment configs) in my portfolio: https://github.com/MoldyDanya/devops-portfolio
+**Example of Match-3 core gameplay implementation** (Unity) - in my portfolio: https://github.com/MoldyDanya/unity-match-3
 
 **Key Achievements:**
 - Led the development of a planar graph puzzle game prototype: created GDD and mechanics design, developed visual editor and balance tools, implemented UI (UI Toolkit), designed FTUE, coordinated the team (Unity dev, UI artist, VFX dev)
