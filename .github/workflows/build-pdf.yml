@@ -1,60 +1,59 @@
 name: Build PDF
 
-# PDFs live in the `latest` release: https://github.com/<owner>/<repo>/releases/download/latest/<name>.pdf
 on:
-  push:
-    branches: [main]
-    paths: ['*.md', '.github/scripts/render.py', '.github/workflows/build-pdf.yml']
-  workflow_dispatch: # rebuilds every document
+  workflow_dispatch:
+    inputs:
+      document:
+        description: Какой документ собрать в PDF
+        type: choice
+        default: master-CV-ru.md
+        # .md files on main; update this list when files are added or renamed
+        options:
+          - all
+          - master-CV-ru.md
+          - master-cv-en.md
+          - devops-cv-ru.md
+          - devops-cv-en.md
+          - unity-gameplay-developer-cv-ru.md
+          - unity-gameplay-developer-cv-en.md
+          - unity-technical-developer-cv-ru.md
+          - unity-technical-developer-cv-en.md
 
 permissions:
-  contents: write
-
-concurrency: pdf-release
+  contents: read
 
 jobs:
   pdf:
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-
-      - name: Pick documents
-        env:
-          BEFORE: ${{ github.event.before }}
-        run: |
-          # only changed docs; everything on manual run, new branch/force-push, or render changes
-          if [ "$GITHUB_EVENT_NAME" = push ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null \
-             && git diff --quiet "$BEFORE" HEAD -- .github; then
-            git diff --name-only --no-renames --diff-filter=d "$BEFORE" HEAD -- ':(glob)*.md' ':!README.md' > build.txt
-          else
-            ls *.md | grep -vx README.md > build.txt
-          fi
-          cat build.txt
 
       - name: Install fonts
         run: sudo apt-get update -q && sudo apt-get install -yq --no-install-recommends fonts-noto-core
 
       - name: Render
+        id: render
+        env:
+          DOC: ${{ inputs.document }}
+          GH_TOKEN: ${{ github.token }}
         run: |
+          if [ "$DOC" = all ]; then files=$(ls *.md | grep -vx README.md); else files=$DOC; fi
           mkdir -p out
-          for f in $(cat build.txt); do
+          for f in $files; do
+            test -f "$f" || { echo "::error::$f не найден в ветке $GITHUB_REF_NAME"; exit 1; }
             name=${f%.md}
             python3 .github/scripts/render.py "$f" "out/$name.html"
             google-chrome --headless --no-sandbox --disable-gpu --no-pdf-header-footer \
               --virtual-time-budget=10000 --print-to-pdf="out/$name.pdf" "file://$PWD/out/$name.html"
             test -s "out/$name.pdf"
           done
+          rm out/*.html
+          echo "path=$([ "$DOC" = all ] && echo 'out/*.pdf' || echo "out/${DOC%.md}.pdf")" >> "$GITHUB_OUTPUT"
 
-      - name: Publish to release
-        run: |
-          gh release view latest >/dev/null 2>&1 || gh release create latest --target "$GITHUB_SHA" \
-            --title "CV (PDF)" --notes "Собирается автоматически из .md при каждом пуше в main."
-          if ls out/*.pdf >/dev/null 2>&1; then gh release upload latest out/*.pdf --clobber; fi
-          # drop PDFs whose .md was deleted or renamed
-          gh release view latest --json assets -q '.assets[].name' | while read -r a; do
-            [ -f "${a%.pdf}.md" ] || gh release delete-asset latest "$a" -y
-          done
+      # one document -> the PDF itself as artifact; all -> one zip
+      - uses: actions/upload-artifact@v7
+        with:
+          name: cv-pdf
+          path: ${{ steps.render.outputs.path }}
+          archive: ${{ inputs.document == 'all' }}
+          if-no-files-found: error
