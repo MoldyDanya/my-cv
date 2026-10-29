@@ -1,0 +1,60 @@
+name: Build PDF
+
+# PDFs live in the `latest` release: https://github.com/<owner>/<repo>/releases/download/latest/<name>.pdf
+on:
+  push:
+    branches: [main]
+    paths: ['*.md', '.github/scripts/render.py', '.github/workflows/build-pdf.yml']
+  workflow_dispatch: # rebuilds every document
+
+permissions:
+  contents: write
+
+concurrency: pdf-release
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Pick documents
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          # only changed docs; everything on manual run, new branch/force-push, or render changes
+          if [ "$GITHUB_EVENT_NAME" = push ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null \
+             && git diff --quiet "$BEFORE" HEAD -- .github; then
+            git diff --name-only --no-renames --diff-filter=d "$BEFORE" HEAD -- ':(glob)*.md' ':!README.md' > build.txt
+          else
+            ls *.md | grep -vx README.md > build.txt
+          fi
+          cat build.txt
+
+      - name: Install fonts
+        run: sudo apt-get update -q && sudo apt-get install -yq --no-install-recommends fonts-noto-core
+
+      - name: Render
+        run: |
+          mkdir -p out
+          for f in $(cat build.txt); do
+            name=${f%.md}
+            python3 .github/scripts/render.py "$f" "out/$name.html"
+            google-chrome --headless --no-sandbox --disable-gpu --no-pdf-header-footer \
+              --virtual-time-budget=10000 --print-to-pdf="out/$name.pdf" "file://$PWD/out/$name.html"
+            test -s "out/$name.pdf"
+          done
+
+      - name: Publish to release
+        run: |
+          gh release view latest >/dev/null 2>&1 || gh release create latest --target "$GITHUB_SHA" \
+            --title "CV (PDF)" --notes "Собирается автоматически из .md при каждом пуше в main."
+          if ls out/*.pdf >/dev/null 2>&1; then gh release upload latest out/*.pdf --clobber; fi
+          # drop PDFs whose .md was deleted or renamed
+          gh release view latest --json assets -q '.assets[].name' | while read -r a; do
+            [ -f "${a%.pdf}.md" ] || gh release delete-asset latest "$a" -y
+          done
